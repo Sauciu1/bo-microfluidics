@@ -231,6 +231,9 @@ copy_references_file(
 )
 
 
+raise Exception("Manual changes needed before proceeding further")
+
+
 for section_name, section_content in zip(*separate_sections(raw_text)):
     text = convert_citations_to_latex(section_content)
     text = replace_bold_italics(text)

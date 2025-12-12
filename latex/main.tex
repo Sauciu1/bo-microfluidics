@@ -14,6 +14,7 @@
 \usepackage{mwe} % example images
 \usepackage[labelfont=bf, format=plain, indention=0pt]{caption}
 \usepackage{booktabs} % nicer tables
+\usepackage{pdfpages} % for including PDF pages
 % Math
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -24,6 +25,17 @@
 \usepackage{multicol}
 \usepackage{nicematrix}
 \usepackage[table]{xcolor}
+% List customization
+\usepackage{enumitem}
+\usepackage{wrapfig}
+
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+\setlist[itemize]{leftmargin=*, labelsep=0.5em}
+\setlist[enumerate,2]{itemsep=0.3em, parsep=0pt}
+\setlist[enumerate,3]{itemsep=0.2em, parsep=0pt}
+\setlist[itemize,2]{itemsep=0.3em, parsep=0pt}
+\setlist[itemize,3]{itemsep=0.2em, parsep=0pt}
+
 % Hyperlinks and URLs
 \usepackage{hyperref}
 \usepackage{url}
@@ -53,8 +65,20 @@
 
 \renewcommand{\refname}{References}
 
+
+
+
 \begin{document}
 
+
+
+\title{\vspace{-2cm} \Large A microfluidic, batch-optimised platform for high-throughput screening of drug combination dose–response landscapes in tumour spheroid arrays}
+\subtitle{Research Proposal for BIOE70149}
+\author{Povilas Sauciuvienas (CID 02293151)}
+
+\maketitle
+
+\vspace{-0.7cm}
 \section{Lay Summary}
 \subfile{sections/lay_summary.tex}
 
@@ -62,10 +86,23 @@
 \section{Scientific Summary}
 \subfile{sections/scientific_summary.tex}
 
-\section{Research plan}
+\section{Timeliness and Novelty}
+\subfile{sections/timeliness_and_novelty.tex}
+
+\newpage
+\vspace{-1cm}
+\section{Research Proposal}
 \subfile{sections/research_proposal.tex}
-\clearpage
+\clearpage 
 
 
 \bibliography{references}
+\newpage
+
+\begin{appendices}
+\section{Gantt Chart}
+\includegraphics[width=\textwidth,page=1]{img/Gantt_chart.pdf}
+\end{appendices}
+
+
 \end{document}
