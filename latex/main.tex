@@ -1,0 +1,71 @@
+\documentclass[10pt, onecolumn]{scrartcl}
+\usepackage[a4paper,width=170mm,top=25mm,bottom=25mm,bindingoffset=3mm]{geometry}
+\setlength{\parskip}{1em}
+
+% Document structure and file management
+\usepackage{subfiles}
+\usepackage{longtable}
+\usepackage[toc,page]{appendix}
+% Graphics and figuresre
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{mwe} % example images
+\usepackage[labelfont=bf, format=plain, indention=0pt]{caption}
+\usepackage{booktabs} % nicer tables
+% Math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% Tables and layout
+\usepackage{multicol}
+\usepackage{nicematrix}
+\usepackage[table]{xcolor}
+% Hyperlinks and URLs
+\usepackage{hyperref}
+\usepackage{url}
+% Citation handling
+\bibliographystyle{unsrtnat}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{siunitx}
+
+
+\setlength{\parindent}{0pt}
+% \input{redefine_sections}
+
+
+\renewenvironment{abstract}
+ {\large
+  \begin{center}
+  \hrule\vspace{-1mm} % Horizontal line above
+  \bfseries \abstractname\vspace{-3mm}\vspace{0pt}
+  \end{center}
+
+    \setlength{\leftmargin}{3mm}%
+    \setlength{\rightmargin}{\leftmargin}%
+    \setlength{\parskip}{1mm}% Decreased line spacing between paragraphs
+  \setlength{\parindent}{1cm} % Force indent from here onward
+ }
+ {\endlist\vspace{0.5em}\hrule} % Horizontal line below
+
+\renewcommand{\refname}{References}
+
+\begin{document}
+
+\section{Lay Summary}
+\subfile{sections/lay_summary.tex}
+
+
+\section{Scientific Summary}
+\subfile{sections/scientific_summary.tex}
+
+\section{Research plan}
+\subfile{sections/research_proposal.tex}
+\clearpage
+
+
+\bibliography{references}
+\end{document}
